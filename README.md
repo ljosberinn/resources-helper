@@ -3,12 +3,12 @@
 [![dependencies][dependencies-image] ][dependencies-url]
 [![devdependencies][devdependencies-image] ][devdependencies-url]
 
-[dependencies-image]: https://david-dm.org/ljosberinn/personal-react-boilerplate.png
-[dependencies-url]: https://david-dm.org/ljosberinn/personal-react-boilerplate
-[devdependencies-image]: https://david-dm.org/ljosberinn/personal-react-boilerplate/dev-status.png
-[devdependencies-url]: https://david-dm.org/ljosberinn/personal-react-boilerplate#info=devDependencies
-[netlify-image]: https://api.netlify.com/api/v1/badges/20ce39dc-d1d4-4bb9-a5ee-6c3d613e3ed6/deploy-status
-[netlify-url]: https://app.netlify.com/sites/personal-react-boilerplate/deploys
+[dependencies-image]: https://david-dm.org/ljosberinn/resources-helper.png
+[dependencies-url]: https://david-dm.org/ljosberinn/resources-helper
+[devdependencies-image]: https://david-dm.org/ljosberinn/resources-helper/dev-status.png
+[devdependencies-url]: https://david-dm.org/ljosberinn/resources-helper#info=devDependencies
+[netlify-image]: https://api.netlify.com/api/v1/badges/b9e81f31-f592-434d-a137-20c710743c2d/deploy-status
+[netlify-url]: https://app.netlify.com/sites/resources-helper/deploys
 
 # Technologies
 
@@ -72,8 +72,8 @@
 # Development
 
 ```bash
-git clone https://github.com/ljosberinn/personal-react-boilerplate
-cd personal-react-boilerplate
+git clone https://github.com/ljosberinn/resources-helper
+cd resources-helper
 yarn install
 code .
 ```
