@@ -1,13 +1,15 @@
 import React from 'react';
-import { useIdentityContext } from 'react-netlify-identity';
+import { useUser } from '../../../hooks';
 
 /**
  * @returns {React.FC} LandingPage
  */
 export default function LandingPage() {
-  const { user } = useIdentityContext();
+  const user = useUser();
 
-  //console.log(user);
+  if (!user.id) {
+    return null;
+  }
 
-  return null;
+  return JSON.stringify(user, null, 2);
 }
