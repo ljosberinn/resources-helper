@@ -1,4 +1,6 @@
 import faunadb from 'faunadb';
+import user from '../models/user';
+import { BAD_REQUEST, OK } from '../utils/statusCodes';
 
 const q = faunadb.query;
 
@@ -9,13 +11,15 @@ const client = new faunadb.Client({
 export async function handler({ queryStringParameters: { id } }, context) {
   if (!id) {
     return {
-      statusCode: 400,
+      statusCode: BAD_REQUEST,
     };
   }
 
+  // todo: actually load user
+
   return {
-    statusCode: 200,
-    body: id,
+    statusCode: OK,
+    body: JSON.stringify({ ...user, id }),
     headers: {
       'Content-Type': 'application/json',
     },

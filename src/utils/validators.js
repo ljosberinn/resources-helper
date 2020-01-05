@@ -1,3 +1,44 @@
+const allowedSpecialCharacters = [
+  '!',
+  '"',
+  '§',
+  '$',
+  '%',
+  '&',
+  '/',
+  '(',
+  ')',
+  '=',
+  '?',
+  ',',
+  '.',
+  ';',
+  ':',
+  '_',
+  '-',
+];
+const characterPattern = '[A-Za-z]';
+const passwordPattern = `^(?=.*${characterPattern})(?=.*[0-9])(?=.{8,}).*$`;
+const usernamePattern = '^[a-zA-Z0-9]+(?:[._ -]?[a-zA-Z0-9])*$';
+const apiKeyPattern = '[\\da-z]{45}';
+
+/**
+ *
+ * @param {string} key
+ */
+const isValidAPIKey = key => new RegExp(apiKeyPattern).test(key);
+/**
+ *
+ * @param {string} key
+ */
+const isValidUsername = userName => new RegExp(usernamePattern).test(userName);
+
+/**
+ *
+ * @param {string} key
+ */
+const isValidPassword = password => new RegExp(passwordPattern).test(password);
+
 // https://stackoverflow.com/a/32686261
 const isValidMail = mail => {
   if (mail.length === 0) {
@@ -21,48 +62,18 @@ const isValidMail = mail => {
   }
 };
 
-const allowedSpecialCharacters = [
-  '!',
-  '"',
-  '§',
-  '$',
-  '%',
-  '&',
-  '/',
-  '(',
-  ')',
-  '=',
-  '?',
-  ',',
-  '.',
-  ';',
-  ':',
-  '_',
-  '-',
-];
-const characterPattern = '[A-Za-z]';
-const passwordPattern = `^(?=.*${characterPattern})(?=.*[0-9])(?=.{8,}).*$`;
-
-const isValidPassword = password => new RegExp(passwordPattern).test(password);
-
-const usernamePattern = '^[a-zA-Z0-9]+(?:[._ -]?[a-zA-Z0-9])*$';
-
-const isValidUsername = userName => new RegExp(usernamePattern).test(userName);
-
-const namePattern =
-  "^[a-zA-Z àáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð'-]+$";
-
 const validate = {
   mail: isValidMail,
   password: isValidPassword,
   username: isValidUsername,
+  apiKey: isValidAPIKey,
 };
 
 const pattern = {
   mail: '',
   password: passwordPattern,
   userName: usernamePattern,
-  realName: namePattern,
+  apiKey: apiKeyPattern,
 };
 
 export { validate, pattern, allowedSpecialCharacters, characterPattern };
