@@ -1,43 +1,30 @@
 import React, { useEffect, useState, createContext } from 'react';
 import { useIdentityContext } from 'react-netlify-identity';
 import INITIAL_STATE from '../models/user';
+import UserService from '../services/user';
+import { useAbortSignal } from '../hooks';
 
 export const UserContext = createContext(INITIAL_STATE);
-
-async function getUser(id, callback) {
-  callback({ ...INITIAL_STATE, id });
-  return;
-
-  const response = await fetch(`/.netlify/functions/getUser?id=${id}`);
-  const json = await response.json();
-
-  callback(json);
-}
-
-async function createUser(id, callback) {
-  const response = await fetch('/.netlify/functions/createUser', {
-    method: 'POST',
-    body: { id },
-  });
-
-  if (response.ok) {
-    callback({ ...INITIAL_STATE, id });
-  }
-}
 
 export default function UserProvider({ children }) {
   const { user: netlifyUser } = useIdentityContext();
   const [user, setUser] = useState(INITIAL_STATE);
 
+  const { signal, abort } = useAbortSignal();
+
   useEffect(() => {
     if (netlifyUser?.id) {
+      const service = new UserService(signal);
+
       try {
-        getUser(netlifyUser.id, setUser);
+        service.get(netlifyUser.id).then(setUser);
       } catch (error) {
-        createUser(netlifyUser.id, setUser);
+        service.create(netlifyUser.id).then(setUser);
       }
+
+      return abort;
     }
-  }, [netlifyUser]);
+  }, [netlifyUser, abort, signal]);
 
   return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
 }
