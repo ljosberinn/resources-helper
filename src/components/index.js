@@ -16,6 +16,7 @@ import PasswordSelection from './PasswordSelection';
 import Form from './Form';
 import Error from './Error';
 import LoginProviderGroup from './LoginProviderGroup';
+import DebouncedInput from './DebouncedInput';
 
 export {
   LoginProviderButton,
@@ -36,4 +37,5 @@ export {
   Form,
   Error,
   LoginProviderGroup,
+  DebouncedInput,
 };
