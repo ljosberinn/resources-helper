@@ -8,8 +8,8 @@ export default [
     ratePerHour: 0,
     name: 'Clay pit',
     resourceName: 'Clay',
-    basePrice: 1_000_000,
-    maxRate: 1_530,
+    basePrice: 1000000,
+    maxRate: 1530,
   },
   {
     mineID: 5,
@@ -18,7 +18,7 @@ export default [
     ratePerHour: 0,
     name: 'Gravel pit',
     resourceName: 'Gravel',
-    basePrice: 5_000_000,
+    basePrice: 5000000,
     maxRate: 542,
   },
   {
@@ -28,7 +28,7 @@ export default [
     ratePerHour: 0,
     name: 'Coal mine',
     resourceName: 'Coal',
-    basePrice: 50_000_000,
+    basePrice: 50000000,
     maxRate: 510,
   },
   {
@@ -38,7 +38,7 @@ export default [
     ratePerHour: 0,
     name: 'Oil derrick',
     resourceName: 'Crude oil',
-    basePrice: 100_000_000,
+    basePrice: 100000000,
     maxRate: 306,
   },
   {
@@ -48,7 +48,7 @@ export default [
     ratePerHour: 0,
     name: 'Bauxite mine',
     resourceName: 'Bauxite',
-    basePrice: 600_000_000,
+    basePrice: 600000000,
     maxRate: 306,
   },
   {
@@ -58,7 +58,7 @@ export default [
     ratePerHour: 0,
     name: 'Iron ore mine',
     resourceName: 'Iron ore',
-    basePrice: 10_000_000,
+    basePrice: 10000000,
     maxRate: 382.5,
   },
   {
@@ -68,7 +68,7 @@ export default [
     ratePerHour: 0,
     name: 'Gold mine',
     resourceName: 'Gold ore',
-    basePrice: 1_500_000_000,
+    basePrice: 1500000000,
     maxRate: 2040,
   },
   {
@@ -78,7 +78,7 @@ export default [
     ratePerHour: 0,
     name: 'Silver mine',
     resourceName: 'Silver ore',
-    basePrice: 1_250_000_000,
+    basePrice: 1250000000,
     maxRate: 638,
   },
   {
@@ -88,7 +88,7 @@ export default [
     ratePerHour: 0,
     name: 'limestone quarry',
     resourceName: 'Limestone',
-    basePrice: 2_500_000,
+    basePrice: 2500000,
     maxRate: 510,
   },
   {
@@ -98,7 +98,7 @@ export default [
     ratePerHour: 0,
     name: 'Copper mine',
     resourceName: 'Chalcopyrite',
-    basePrice: 400_000_000,
+    basePrice: 400000000,
     maxRate: 408,
   },
   {
@@ -108,7 +108,7 @@ export default [
     ratePerHour: 0,
     name: 'Ilmenite mine',
     resourceName: 'Ilmenite',
-    basePrice: 1_000_000_000,
+    basePrice: 1000000000,
     maxRate: 281,
   },
   {
@@ -118,7 +118,7 @@ export default [
     ratePerHour: 0,
     name: 'Sand mine',
     resourceName: 'Quartz sand',
-    basePrice: 200_000_000,
+    basePrice: 200000000,
     maxRate: 765,
   },
   {
@@ -128,8 +128,8 @@ export default [
     ratePerHour: 0,
     name: 'Diamond mine',
     resourceName: 'Rough diamonds',
-    basePrice: 2_000_000_000,
-    maxRate: 1_275,
+    basePrice: 2000000000,
+    maxRate: 1275,
   },
   {
     mineID: 89,
@@ -138,7 +138,7 @@ export default [
     ratePerHour: 0,
     name: 'Lithium ore mine',
     resourceName: 'Lithium ore',
-    basePrice: 800_000_000,
+    basePrice: 800000000,
     maxRate: 2040,
   },
 ];
