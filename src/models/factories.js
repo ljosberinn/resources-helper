@@ -6,15 +6,17 @@ export default [
     productId: 7,
     minUserLevel: 3,
     scaling: 2_100,
-    cashCostPerHour: 3_000,
-    upgradeRequirements: {
-      baseCost: 2_000_000,
-      stock: [
-        { id: 24, amount: 1_000 },
-        { id: 2, amount: 1_000 },
-        { id: 20, amount: 500 },
-      ],
-    },
+    upgradeRequirements: [
+      { id: 1, amount: 2_000_000 },
+      { id: 24, amount: 1_000 },
+      { id: 2, amount: 1_000 },
+      { id: 20, amount: 500 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 3_000 },
+      { id: 3, amount: 450 },
+      { id: 20, amount: 300 },
+    ],
   },
   {
     id: 23,
@@ -22,16 +24,17 @@ export default [
     level: 0,
     productId: 22,
     minUserLevel: 4,
-    upgradeRequirements: {
-      baseCost: 4_000_000,
-      stock: [
-        { id: 7, amount: 5_000 },
-        { id: 24, amount: 2_500 },
-        { id: 20, amount: 500 },
-      ],
-    },
     scaling: 1_210,
-    cashCostPerHour: 9_900,
+    upgradeRequirements: [
+      { id: 1, amount: 4_000_000 },
+      { id: 7, amount: 5_000 },
+      { id: 24, amount: 2_500 },
+      { id: 20, amount: 500 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 9_900 },
+      { id: 20, amount: 880 },
+    ],
   },
   {
     id: 25,
@@ -40,8 +43,20 @@ export default [
     productId: 24,
     minUserLevel: 1,
     scaling: 800,
-    cashCostPerHour: 4_000,
-    upgradeRequirements: { baseCost: 500_000, stock: [{ id: 2, amount: 200 }] },
+    upgradeRequirements: [
+      { id: 1, amount: 500_000 },
+      { id: 2, amount: 200 },
+    ],
+    productionRequirements: [
+      {
+        id: 1,
+        amount: 4_000,
+      },
+      {
+        id: 2,
+        amount: 1_200,
+      },
+    ],
   },
   {
     id: 29,
@@ -49,16 +64,18 @@ export default [
     level: 0,
     productId: 28,
     minUserLevel: 11,
-    upgradeRequirements: {
-      baseCost: 30_000_000,
-      stock: [
-        { id: 7, amount: 25_000 },
-        { id: 30, amount: 2_000 },
-        { id: 36, amount: 500 },
-      ],
-    },
     scaling: 3_500,
-    cashCostPerHour: 240_000,
+    upgradeRequirements: [
+      { id: 1, amount: 30_000_000 },
+      { id: 7, amount: 25_000 },
+      { id: 30, amount: 2_000 },
+      { id: 36, amount: 500 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 240_000 },
+      { id: 36, amount: 100 },
+      { id: 20, amount: 300 },
+    ],
   },
   {
     id: 31,
@@ -66,16 +83,18 @@ export default [
     level: 0,
     productId: 30,
     minUserLevel: 5,
-    upgradeRequirements: {
-      baseCost: 10_000_000,
-      stock: [
-        { id: 7, amount: 9_000 },
-        { id: 24, amount: 500 },
-        { id: 20, amount: 3_000 },
-      ],
-    },
     scaling: 450,
-    cashCostPerHour: 157_500,
+    upgradeRequirements: [
+      { id: 1, amount: 10_000_000 },
+      { id: 7, amount: 9_000 },
+      { id: 24, amount: 500 },
+      { id: 20, amount: 3_000 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 157_500 },
+      { id: 8, amount: 4_500 },
+      { id: 13, amount: 3_150 },
+    ],
   },
   {
     id: 33,
@@ -83,16 +102,17 @@ export default [
     level: 0,
     productId: 32,
     minUserLevel: 12,
-    upgradeRequirements: {
-      baseCost: 40_000_000,
-      stock: [
-        { id: 7, amount: 25_000 },
-        { id: 30, amount: 2_500 },
-        { id: 60, amount: 1_500 },
-      ],
-    },
     scaling: 320,
-    cashCostPerHour: 400_000,
+    upgradeRequirements: [
+      { id: 1, amount: 40_000_000 },
+      { id: 7, amount: 25_000 },
+      { id: 30, amount: 2_500 },
+      { id: 60, amount: 1_500 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 400_000 },
+      { id: 12, amount: 1_920 },
+    ],
   },
   {
     id: 34,
@@ -100,16 +120,17 @@ export default [
     level: 0,
     productId: 35,
     minUserLevel: 40,
-    upgradeRequirements: {
-      baseCost: 750_000_000,
-      stock: [
-        { id: 7, amount: 35_000 },
-        { id: 30, amount: 15_000 },
-        { id: 60, amount: 1_500 },
-      ],
-    },
     scaling: 3_000,
-    cashCostPerHour: 600_000,
+    upgradeRequirements: [
+      { id: 1, amount: 750_000_000 },
+      { id: 7, amount: 35_000 },
+      { id: 30, amount: 15_000 },
+      { id: 60, amount: 1_500 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 600_000 },
+      { id: 15, amount: 480 },
+    ],
   },
   {
     id: 37,
@@ -117,16 +138,17 @@ export default [
     level: 0,
     productId: 36,
     minUserLevel: 10,
-    upgradeRequirements: {
-      baseCost: 40_000_000,
-      stock: [
-        { id: 7, amount: 25_000 },
-        { id: 30, amount: 1_000 },
-        { id: 60, amount: 500 },
-      ],
-    },
     scaling: 270,
-    cashCostPerHour: 225_000,
+    upgradeRequirements: [
+      { id: 1, amount: 40_000_000 },
+      { id: 7, amount: 25_000 },
+      { id: 30, amount: 1_000 },
+      { id: 60, amount: 500 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 225_000 },
+      { id: 26, amount: 810 },
+    ],
   },
   {
     id: 39,
@@ -134,16 +156,17 @@ export default [
     level: 0,
     productId: 38,
     minUserLevel: 6,
-    upgradeRequirements: {
-      baseCost: 20_000_000,
-      stock: [
-        { id: 7, amount: 16_000 },
-        { id: 30, amount: 500 },
-        { id: 3, amount: 500 },
-      ],
-    },
     scaling: 640,
-    cashCostPerHour: 24_000,
+    upgradeRequirements: [
+      { id: 1, amount: 20_000_000 },
+      { id: 7, amount: 16_000 },
+      { id: 30, amount: 500 },
+      { id: 3, amount: 500 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 24_000 },
+      { id: 10, amount: 640 },
+    ],
   },
   {
     id: 52,
@@ -151,16 +174,17 @@ export default [
     level: 0,
     productId: 51,
     minUserLevel: 30,
-    upgradeRequirements: {
-      baseCost: 350_000_000,
-      stock: [
-        { id: 7, amount: 30_000 },
-        { id: 30, amount: 10_000 },
-        { id: 60, amount: 2_500 },
-      ],
-    },
     scaling: 320,
-    cashCostPerHour: 800_000,
+    upgradeRequirements: [
+      { id: 1, amount: 350_000_000 },
+      { id: 7, amount: 30_000 },
+      { id: 30, amount: 10_000 },
+      { id: 60, amount: 2_500 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 800_000 },
+      { id: 49, amount: 640 },
+    ],
   },
   {
     id: 61,
@@ -168,16 +192,19 @@ export default [
     level: 0,
     productId: 60,
     minUserLevel: 8,
-    upgradeRequirements: {
-      baseCost: 20_000_000,
-      stock: [
-        { id: 7, amount: 25_000 },
-        { id: 24, amount: 3_000 },
-        { id: 20, amount: 150 },
-      ],
-    },
     scaling: 640,
-    cashCostPerHour: 240_000,
+    upgradeRequirements: [
+      { id: 1, amount: 20_000_000 },
+      { id: 7, amount: 25_000 },
+      { id: 24, amount: 3_000 },
+      { id: 20, amount: 150 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 240_000 },
+      { id: 20, amount: 320 },
+      { id: 38, amount: 640 },
+      { id: 53, amount: 480 },
+    ],
   },
   {
     id: 63,
@@ -185,16 +212,17 @@ export default [
     level: 0,
     productId: 58,
     minUserLevel: 14,
-    upgradeRequirements: {
-      baseCost: 50_000_000,
-      stock: [
-        { id: 7, amount: 16_000 },
-        { id: 30, amount: 1_000 },
-        { id: 32, amount: 500 },
-      ],
-    },
     scaling: 1_800,
-    cashCostPerHour: 72_000,
+    upgradeRequirements: [
+      { id: 1, amount: 50_000_000 },
+      { id: 7, amount: 16_000 },
+      { id: 30, amount: 1_000 },
+      { id: 32, amount: 500 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 72_000 },
+      { id: 10, amount: 180 },
+    ],
   },
   {
     id: 68,
@@ -202,16 +230,19 @@ export default [
     level: 0,
     productId: 67,
     minUserLevel: 24,
-    upgradeRequirements: {
-      baseCost: 220_000_000,
-      stock: [
-        { id: 7, amount: 20_000 },
-        { id: 30, amount: 1_200 },
-        { id: 60, amount: 1_500 },
-      ],
-    },
     scaling: 120,
-    cashCostPerHour: 2_970_000,
+    upgradeRequirements: [
+      { id: 1, amount: 220_000_000 },
+      { id: 7, amount: 20_000 },
+      { id: 30, amount: 1_200 },
+      { id: 60, amount: 1_500 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 2_970_000 },
+      { id: 2, amount: 60 },
+      { id: 38, amount: 300 },
+      { id: 53, amount: 1200 },
+    ],
   },
   {
     id: 69,
@@ -219,16 +250,19 @@ export default [
     level: 0,
     productId: 66,
     minUserLevel: 27,
-    upgradeRequirements: {
-      baseCost: 300_000_000,
-      stock: [
-        { id: 7, amount: 20_000 },
-        { id: 32, amount: 1_000 },
-        { id: 60, amount: 8_000 },
-      ],
-    },
     scaling: 480,
-    cashCostPerHour: 300_000,
+    upgradeRequirements: [
+      { id: 1, amount: 300_000_000 },
+      { id: 7, amount: 20_000 },
+      { id: 32, amount: 1_000 },
+      { id: 60, amount: 8_000 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 300_000 },
+      { id: 36, amount: 180 },
+      { id: 58, amount: 240 },
+      { id: 67, amount: 60 },
+    ],
   },
   {
     id: 76,
@@ -236,16 +270,19 @@ export default [
     level: 0,
     productId: 75,
     minUserLevel: 35,
-    upgradeRequirements: {
-      baseCost: 500_000_000,
-      stock: [
-        { id: 7, amount: 40_000 },
-        { id: 30, amount: 9_500 },
-        { id: 58, amount: 16_000 },
-      ],
-    },
     scaling: 400,
-    cashCostPerHour: 3_600_000,
+    upgradeRequirements: [
+      { id: 1, amount: 500_000_000 },
+      { id: 7, amount: 40_000 },
+      { id: 30, amount: 9_500 },
+      { id: 58, amount: 16_000 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 3_600_000 },
+      { id: 51, amount: 160 },
+      { id: 58, amount: 80 },
+      { id: 66, amount: 80 },
+    ],
   },
   {
     id: 80,
@@ -253,16 +290,17 @@ export default [
     level: 0,
     productId: 79,
     minUserLevel: 45,
-    upgradeRequirements: {
-      baseCost: 1_000_000_000,
-      stock: [
-        { id: 7, amount: 20_000 },
-        { id: 30, amount: 20_000 },
-        { id: 60, amount: 20_000 },
-      ],
-    },
     scaling: 240,
-    cashCostPerHour: 1_600_000,
+    upgradeRequirements: [
+      { id: 1, amount: 1_000_000_000 },
+      { id: 7, amount: 20_000 },
+      { id: 30, amount: 20_000 },
+      { id: 60, amount: 20_000 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 1_600_000 },
+      { id: 14, amount: 1600 },
+    ],
   },
   {
     id: 85,
@@ -270,16 +308,19 @@ export default [
     level: 0,
     productId: 84,
     minUserLevel: 50,
-    upgradeRequirements: {
-      baseCost: 500_000_000,
-      stock: [
-        { id: 7, amount: 20_000 },
-        { id: 24, amount: 90_000 },
-        { id: 60, amount: 20_000 },
-      ],
-    },
     scaling: 100,
-    cashCostPerHour: 2_500_000,
+    upgradeRequirements: [
+      { id: 1, amount: 500_000_000 },
+      { id: 7, amount: 20_000 },
+      { id: 24, amount: 90_000 },
+      { id: 60, amount: 20_000 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 2_500_000 },
+      { id: 35, amount: 50 },
+      { id: 79, amount: 50 },
+      { id: 81, amount: 50_000 },
+    ],
   },
   {
     id: 91,
@@ -287,16 +328,17 @@ export default [
     level: 0,
     productId: 92,
     minUserLevel: 16,
-    upgradeRequirements: {
-      baseCost: 60_000_000,
-      stock: [
-        { id: 7, amount: 25_000 },
-        { id: 30, amount: 10_000 },
-        { id: 60, amount: 1_000 },
-      ],
-    },
     scaling: 750,
-    cashCostPerHour: 750_000,
+    upgradeRequirements: [
+      { id: 1, amount: 60_000_000 },
+      { id: 7, amount: 25_000 },
+      { id: 30, amount: 10_000 },
+      { id: 60, amount: 1_000 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 750_000 },
+      { id: 90, amount: 17_250 },
+    ],
   },
   {
     id: 95,
@@ -304,16 +346,19 @@ export default [
     level: 0,
     productId: 93,
     minUserLevel: 18,
-    upgradeRequirements: {
-      baseCost: 100_000_000,
-      stock: [
-        { id: 7, amount: 20_000 },
-        { id: 32, amount: 10_000 },
-        { id: 60, amount: 6_000 },
-      ],
-    },
     scaling: 600,
-    cashCostPerHour: 4_500_000,
+    upgradeRequirements: [
+      { id: 1, amount: 100_000_000 },
+      { id: 7, amount: 20_000 },
+      { id: 32, amount: 10_000 },
+      { id: 60, amount: 6_000 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 4_500_000 },
+      { id: 32, amount: 600 },
+      { id: 58, amount: 2_400 },
+      { id: 92, amount: 1_200 },
+    ],
   },
   {
     id: 101,
@@ -321,16 +366,19 @@ export default [
     level: 0,
     productId: 87,
     minUserLevel: 21,
-    upgradeRequirements: {
-      baseCost: 200_000_000,
-      stock: [
-        { id: 24, amount: 500_000 },
-        { id: 7, amount: 50_000 },
-        { id: 60, amount: 10_000 },
-      ],
-    },
     scaling: 125,
-    cashCostPerHour: 1_250_000,
+    upgradeRequirements: [
+      { id: 1, amount: 200_000_000 },
+      { id: 24, amount: 500_000 },
+      { id: 7, amount: 50_000 },
+      { id: 60, amount: 10_000 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 1_250_000 },
+      { id: 30, amount: 5 },
+      { id: 32, amount: 5 },
+      { id: 93, amount: 5 },
+    ],
   },
   {
     id: 118,
@@ -338,16 +386,19 @@ export default [
     level: 0,
     productId: 117,
     minUserLevel: 60,
-    upgradeRequirements: {
-      baseCost: 2_000_000_000,
-      stock: [
-        { id: 7, amount: 80_000 },
-        { id: 58, amount: 120_000 },
-        { id: 60, amount: 40_000 },
-      ],
-    },
     scaling: 1,
-    cashCostPerHour: 25_000_000,
+    upgradeRequirements: [
+      { id: 1, amount: 2_000_000_000 },
+      { id: 7, amount: 80_000 },
+      { id: 58, amount: 120_000 },
+      { id: 60, amount: 40_000 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 25_000_000 },
+      { id: 51, amount: 50 },
+      { id: 66, amount: 25 },
+      { id: 93, amount: 250 },
+    ],
   },
   {
     id: 125,
@@ -355,15 +406,18 @@ export default [
     level: 0,
     productId: 124,
     minUserLevel: 55,
-    upgradeRequirements: {
-      baseCost: 2_000_000_000,
-      stock: [
-        { id: 24, amount: 500_000 },
-        { id: 66, amount: 90_000 },
-        { id: 35, amount: 50_000 },
-      ],
-    },
     scaling: 100,
-    cashCostPerHour: 5_000_000,
+    upgradeRequirements: [
+      { id: 1, amount: 2_000_000_000 },
+      { id: 24, amount: 500_000 },
+      { id: 66, amount: 90_000 },
+      { id: 35, amount: 50_000 },
+    ],
+    productionRequirements: [
+      { id: 1, amount: 5_000_000 },
+      { id: 30, amount: 200 },
+      { id: 35, amount: 100 },
+      { id: 93, amount: 50 },
+    ],
   },
 ];
