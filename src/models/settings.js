@@ -4,4 +4,10 @@ export default {
     showHq: false,
     showMines: false,
   },
+  api: {
+    key: undefined,
+    storeKey: false,
+    remainingCredits: undefined,
+    queryHistory: [],
+  },
 };
