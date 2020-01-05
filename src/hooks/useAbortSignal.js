@@ -1,21 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function useAbortSignal(timeoutMs = 10000) {
-  const [controller] = useState(new AbortController());
+  const controllerRef = useRef(new AbortController());
 
   useEffect(() => {
+    const currentController = controllerRef.current;
+
     const timeout = setTimeout(() => {
-      controller.abort();
+      currentController.abort();
     }, timeoutMs);
 
     return () => {
       clearTimeout(timeout);
-      controller.abort();
+      currentController.abort();
     };
-  }, [controller, timeoutMs]);
+  }, [controllerRef, timeoutMs]);
 
   return {
-    signal: controller.signal,
-    abort: controller.abort,
+    signal: controllerRef.current.signal,
+    abort: controllerRef.current.abort,
   };
 }
