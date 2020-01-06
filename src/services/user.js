@@ -43,10 +43,10 @@ export default class UserService {
           options: {
             method: 'POST',
             body: JSON.stringify({ id: params.id }),
+            signal: this.signal,
             headers: {
               ...DEFAULT_HEADERS,
               'Content-type': 'application/json',
-              signal: this.signal,
             },
           },
         };
