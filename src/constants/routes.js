@@ -63,3 +63,10 @@ export const SETTINGS = {
   title: 'routes:settings',
   icon: faCog,
 };
+
+export const MINES = {
+  routerPath: '/mines',
+  clientPath: '/mines',
+  title: 'routes:mines',
+  icon: undefined,
+};

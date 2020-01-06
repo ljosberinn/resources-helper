@@ -8,4 +8,7 @@ export const PRIVATE_ROUTES = {
   [ROUTES.SETTINGS.routerPath]: LoadableComponent(() =>
     import(/* webpackChunkName: "private.settings" */ './SettingsRoute'),
   ),
+  [ROUTES.MINES.routerPath]: LoadableComponent(() =>
+    import(/* webpackChunkName: "private.mines" */ './MinesPage'),
+  ),
 };
