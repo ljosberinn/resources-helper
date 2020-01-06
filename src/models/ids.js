@@ -3,396 +3,432 @@
 export default [
   {
     id: 1,
-    name_en: 'Credits',
+    name: 'Credits',
   },
   {
     id: 2,
-    name_en: 'Clay',
+    name: 'Clay',
   },
   {
     id: 3,
-    name_en: 'Gravel',
+    name: 'Gravel',
   },
-  { id: 4, name_en: 'Clay pit' },
-  { id: 5, name_en: 'Gravel pit' },
+  {
+    id: 4,
+    name: 'Clay pit',
+  },
+  {
+    id: 5,
+    name: 'Gravel pit',
+  },
   {
     id: 6,
-    name_en: 'Concrete factory',
+    name: 'Concrete factory',
   },
   {
     id: 7,
-    name_en: 'Concrete',
+    name: 'Concrete',
   },
   {
     id: 8,
-    name_en: 'Coal',
+    name: 'Coal',
   },
-  { id: 9, name_en: 'Coal mine' },
+  { id: 9, name: 'Coal mine' },
   {
     id: 10,
-    name_en: 'Crude oil',
+    name: 'Crude oil',
   },
-  { id: 11, name_en: 'Oil derrick' },
+  {
+    id: 11,
+    name: 'Oil derrick',
+  },
   {
     id: 12,
-    name_en: 'Bauxite',
+    name: 'Bauxite',
   },
   {
     id: 13,
-    name_en: 'Iron ore',
+    name: 'Iron ore',
   },
   {
     id: 14,
-    name_en: 'Gold ore',
+    name: 'Gold ore',
   },
   {
     id: 15,
-    name_en: 'Silver ore',
+    name: 'Silver ore',
   },
-  { id: 16, name_en: 'Bauxite mine' },
-  { id: 17, name_en: 'Iron ore mine' },
-  { id: 18, name_en: 'Gold mine' },
-  { id: 19, name_en: 'Silver mine' },
+  {
+    id: 16,
+    name: 'Bauxite mine',
+  },
+  {
+    id: 17,
+    name: 'Iron ore mine',
+  },
+  {
+    id: 18,
+    name: 'Gold mine',
+  },
+  {
+    id: 19,
+    name: 'Silver mine',
+  },
   {
     id: 20,
-    name_en: 'Limestone',
+    name: 'Limestone',
   },
-  { id: 21, name_en: 'limestone quarry' },
+  {
+    id: 21,
+    name: 'Limestone quarry',
+  },
   {
     id: 22,
-    name_en: 'Fertilizer',
+    name: 'Fertilizer',
   },
   {
     id: 23,
-    name_en: 'Fertilizer factory',
+    name: 'Fertilizer factory',
   },
   {
     id: 24,
-    name_en: 'Bricks',
+    name: 'Bricks',
   },
   {
     id: 25,
-    name_en: 'brick factory',
+    name: 'Brick factory',
   },
   {
     id: 26,
-    name_en: 'Chalcopyrite',
+    name: 'Chalcopyrite',
   },
-  { id: 27, name_en: 'Copper mine' },
+  { id: 27, name: 'Copper mine' },
   {
     id: 28,
-    name_en: 'Insecticides',
+    name: 'Insecticides',
   },
   {
     id: 29,
-    name_en: 'Insecticide factory',
+    name: 'Insecticide factory',
   },
   {
     id: 30,
-    name_en: 'Steel',
+    name: 'Steel',
   },
   {
     id: 31,
-    name_en: 'Ironworks',
+    name: 'Ironworks',
   },
   {
     id: 32,
-    name_en: 'Aluminium',
+    name: 'Aluminium',
   },
   {
     id: 33,
-    name_en: 'Aluminium factory',
+    name: 'Aluminium factory',
   },
   {
     id: 34,
-    name_en: 'Silver refinery',
+    name: 'Silver refinery',
   },
   {
     id: 35,
-    name_en: 'Silver',
+    name: 'Silver',
   },
   {
     id: 36,
-    name_en: 'Copper',
+    name: 'Copper',
   },
   {
     id: 37,
-    name_en: 'Copper refinery',
+    name: 'Copper refinery',
   },
   {
     id: 38,
-    name_en: 'Fossil fuel',
+    name: 'Fossil fuel',
   },
   {
     id: 39,
-    name_en: 'Oil refinery',
+    name: 'Oil refinery',
   },
   {
     id: 40,
-    name_en: 'Roman coins',
+    name: 'Roman coins',
   },
   {
     id: 41,
-    name_en: 'Fossils',
+    name: 'Fossils',
   },
   {
     id: 42,
-    name_en: 'Giant diamond',
+    name: 'Giant diamond',
   },
   {
     id: 43,
-    name_en: 'Maintenance kit',
+    name: 'Maintenance kit',
   },
   {
     id: 44,
-    name_en: 'Tech upgrade 1',
+    name: 'Tech upgrade 1',
   },
   {
     id: 45,
-    name_en: 'Tech upgrade 2',
+    name: 'Tech upgrade 2',
   },
   {
     id: 46,
-    name_en: 'Tech upgrade 3',
+    name: 'Tech upgrade 3',
   },
   {
     id: 48,
-    name_en: 'Tech upgrade 4',
+    name: 'Tech upgrade 4',
   },
   {
     id: 49,
-    name_en: 'Ilmenite',
+    name: 'Ilmenite',
   },
-  { id: 50, name_en: 'Ilmenite mine' },
+  {
+    id: 50,
+    name: 'Ilmenite mine',
+  },
   {
     id: 51,
-    name_en: 'Titanium',
+    name: 'Titanium',
   },
   {
     id: 52,
-    name_en: 'Titanium refinery',
+    name: 'Titanium refinery',
   },
   {
     id: 53,
-    name_en: 'Quartz sand',
+    name: 'Quartz sand',
   },
-  { id: 54, name_en: 'Sand mine' },
+  {
+    id: 54,
+    name: 'Sand mine',
+  },
   {
     id: 55,
-    name_en: 'Copper coins',
+    name: 'Copper coins',
   },
   {
     id: 57,
-    name_en: 'Old tires',
+    name: 'Old tires',
   },
   {
     id: 58,
-    name_en: 'Plastics',
+    name: 'Plastics',
   },
   {
     id: 59,
-    name_en: 'Recycling plant',
+    name: 'Recycling plant',
   },
   {
     id: 60,
-    name_en: 'Glass',
+    name: 'Glass',
   },
   {
     id: 61,
-    name_en: "Glazier's workshop",
+    name: "Glazier's workshop",
   },
   {
     id: 62,
-    name_en: 'Casino',
+    name: 'Casino',
   },
   {
     id: 63,
-    name_en: 'Plastic factory',
+    name: 'Plastic factory',
   },
   {
     id: 65,
-    name_en: 'Museum',
+    name: 'Museum',
   },
   {
     id: 66,
-    name_en: 'Electronics',
+    name: 'Electronics',
   },
   {
     id: 67,
-    name_en: 'Silicon',
+    name: 'Silicon',
   },
   {
     id: 68,
-    name_en: 'Silicon refinery',
+    name: 'Silicon refinery',
   },
   {
     id: 69,
-    name_en: 'Electronics factory',
+    name: 'Electronics factory',
   },
   {
     id: 70,
-    name_en: 'Scrap metal',
+    name: 'Scrap metal',
   },
   {
     id: 71,
-    name_en: 'Hospital',
+    name: 'Hospital',
   },
   {
     id: 72,
-    name_en: 'Law firm',
+    name: 'Law firm',
   },
   {
     id: 74,
-    name_en: 'Used oil',
+    name: 'Used oil',
   },
   {
     id: 75,
-    name_en: 'Medical technology',
+    name: 'Medical technology',
   },
   {
     id: 76,
-    name_en: 'Medical technology Inc.',
+    name: 'Medical technology Inc.',
   },
   {
     id: 77,
-    name_en: 'Plastic scrap',
+    name: 'Plastic scrap',
   },
   {
     id: 78,
-    name_en: 'Electronic scrap',
+    name: 'Electronic scrap',
   },
   {
     id: 79,
-    name_en: 'Gold',
+    name: 'Gold',
   },
   {
     id: 80,
-    name_en: 'Gold refinery',
+    name: 'Gold refinery',
   },
   {
     id: 81,
-    name_en: 'Rough diamonds',
+    name: 'Rough diamonds',
   },
-  { id: 82, name_en: 'Diamond mine' },
+  {
+    id: 82,
+    name: 'Diamond mine',
+  },
   {
     id: 84,
-    name_en: 'Jewellery',
+    name: 'Jewellery',
   },
   {
     id: 85,
-    name_en: 'Goldsmith',
+    name: 'Goldsmith',
   },
   {
     id: 86,
-    name_en: 'Mafia HQ',
+    name: 'Mafia HQ',
   },
   {
     id: 87,
-    name_en: 'Weapons',
+    name: 'Weapons',
   },
-  { id: 89, name_en: 'Lithium ore mine' },
+  {
+    id: 89,
+    name: 'Lithium ore mine',
+  },
   {
     id: 90,
-    name_en: 'Lithium ore',
+    name: 'Lithium ore',
   },
   {
     id: 91,
-    name_en: 'Lithium refinery',
+    name: 'Lithium refinery',
   },
   {
     id: 92,
-    name_en: 'Lithium',
+    name: 'Lithium',
   },
   {
     id: 93,
-    name_en: 'Batteries',
+    name: 'Batteries',
   },
   {
     id: 95,
-    name_en: 'Battery factory',
+    name: 'Battery factory',
   },
   {
     id: 96,
-    name_en: 'Watch dogs',
+    name: 'Watch dogs',
   },
   {
     id: 97,
-    name_en: 'Training camp',
+    name: 'Training camp',
   },
   {
     id: 98,
-    name_en: 'Security staff',
+    name: 'Security staff',
   },
   {
     id: 99,
-    name_en: 'Elite force',
+    name: 'Elite force',
   },
   {
     id: 101,
-    name_en: 'Arms factory',
+    name: 'Arms factory',
   },
   {
     id: 102,
-    name_en: 'Attack dogs',
+    name: 'Attack dogs',
   },
   {
     id: 103,
-    name_en: 'Gangster',
+    name: 'Gangster',
   },
   {
     id: 104,
-    name_en: 'Private army',
+    name: 'Private army',
   },
   {
     id: 115,
-    name_en: 'Waste glass',
+    name: 'Waste glass',
   },
   {
     id: 116,
-    name_en: 'Tech center',
+    name: 'Tech center',
   },
   {
     id: 117,
-    name_en: 'Scan drones',
+    name: 'Scan drones',
   },
   {
     id: 118,
-    name_en: 'Drone shipyard',
+    name: 'Drone shipyard',
   },
   {
     id: 119,
-    name_en: 'Drone research',
+    name: 'Drone research',
   },
   {
     id: 120,
-    name_en: 'Drone wreckage',
+    name: 'Drone wreckage',
   },
   {
     id: 121,
-    name_en: 'Service center',
+    name: 'Service center',
   },
   {
     id: 122,
-    name_en: 'HR Department',
+    name: 'HR Department',
   },
   {
     id: 123,
-    name_en: 'Haulage firm',
+    name: 'Haulage firm',
   },
   {
     id: 124,
-    name_en: 'Trucks',
+    name: 'Trucks',
   },
   {
     id: 125,
-    name_en: 'Truck plant',
+    name: 'Truck plant',
   },
   {
     id: 126,
-    name_en: 'Fire Station',
+    name: 'Fire Station',
   },
   {
     id: 127,
-    name_en: 'Seismology Centre',
+    name: 'Seismology Centre',
   },
 ];
