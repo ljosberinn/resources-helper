@@ -1,8 +1,9 @@
-import React, { useEffect, useState, createContext } from 'react';
+import React, { useEffect, useState, createContext, useCallback } from 'react';
 import { useIdentityContext } from 'react-netlify-identity';
 import INITIAL_STATE from '../models/user';
-import UserService from '../services/user';
+import { UserService } from '../services';
 import { useAbortSignal } from '../hooks';
+import MineUtil from '../utils/mine';
 
 export const UserContext = createContext(INITIAL_STATE);
 
@@ -26,5 +27,59 @@ export default function UserProvider({ children }) {
     }
   }, [netlifyUser, abort, signal]);
 
-  return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
+  /**
+   * @param {number} resourceId the id of a mine resource
+   */
+  const setMineAmount = useCallback(
+    resourceId => ({ target: { value } }) => {
+      const sanitizedAmount =
+        value > 0
+          ? value <= MineUtil.MAX_MINES
+            ? parseInt(value)
+            : MineUtil.MAX_MINES
+          : 0;
+
+      setUser(user => ({
+        ...user,
+        mines: user.mines.map(mine => {
+          if (mine.resourceId === resourceId) {
+            return { ...mine, amount: sanitizedAmount };
+          }
+
+          return mine;
+        }),
+      }));
+    },
+    [],
+  );
+
+  /**
+   * @param {number} resourceId the id of a mine resource
+   */
+  const setMineRate = useCallback(
+    resourceId => ({ target: { value } }) => {
+      const sanitizedRate = value > 0 ? parseInt(value) : 0;
+
+      setUser(user => ({
+        ...user,
+        mines: user.mines.map(mine => {
+          if (mine.resourceId === resourceId) {
+            return {
+              ...mine,
+              ratePerHour: sanitizedRate,
+            };
+          }
+
+          return mine;
+        }),
+      }));
+    },
+    [],
+  );
+
+  return (
+    <UserContext.Provider value={{ ...user, setMineAmount, setMineRate }}>
+      {children}
+    </UserContext.Provider>
+  );
 }
