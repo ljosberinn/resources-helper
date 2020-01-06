@@ -42,7 +42,7 @@ export default class UserService {
           url: `${BASE_PATH}/createUser`,
           options: {
             method: 'POST',
-            body: JSON.stringify({ id: params.id }),
+            body: JSON.stringify(params),
             signal: this.signal,
             headers: {
               ...DEFAULT_HEADERS,
