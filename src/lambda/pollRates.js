@@ -39,7 +39,7 @@ export async function handler() {
     await client.query(
       q.Create(q.Collection('market'), {
         data,
-        ttl: createExpiration(data.ts),
+        ttl: q.Time(createExpiration(data.ts * 1000)),
       }),
     );
 
@@ -61,5 +61,5 @@ function createExpiration(now) {
   const date = new Date(now);
   date.setFullYear(date.getFullYear() + 1);
 
-  return date.getMilliseconds();
+  return date.toISOString();
 }
