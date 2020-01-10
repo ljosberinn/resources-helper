@@ -1,10 +1,19 @@
-import { useEffect, useRef } from 'react';
+import { useRef, useEffect } from 'react';
+
+const supportsAbortController = 'AbortController' in window;
+const fallback = { signal: null, abort: () => {} };
 
 export default function useAbortSignal(timeoutMs = 10000) {
-  const controllerRef = useRef(new AbortController());
+  const controller = useRef(
+    supportsAbortController ? new AbortController() : fallback,
+  );
 
   useEffect(() => {
-    const currentController = controllerRef.current;
+    const currentController = controller.current;
+
+    if (!currentController) {
+      return;
+    }
 
     const timeout = setTimeout(() => {
       currentController.abort();
@@ -14,10 +23,7 @@ export default function useAbortSignal(timeoutMs = 10000) {
       clearTimeout(timeout);
       currentController.abort();
     };
-  }, [controllerRef, timeoutMs]);
+  }, [controller, timeoutMs]);
 
-  return {
-    signal: controllerRef.current.signal,
-    abort: controllerRef.current.abort,
-  };
+  return controller;
 }

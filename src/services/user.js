@@ -7,7 +7,7 @@ const DEFAULT_HEADERS = {
 export default class UserService {
   /**
    *
-   * @param {AbortSignal} signal
+   * @param {AbortSignal | null} signal
    */
   constructor(signal) {
     this.signal = signal;

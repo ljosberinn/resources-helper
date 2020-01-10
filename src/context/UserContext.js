@@ -10,22 +10,19 @@ export const UserContext = createContext(INITIAL_STATE);
 export default function UserProvider({ children }) {
   const { user: netlifyUser } = useIdentityContext();
   const [user, setUser] = useState(INITIAL_STATE);
-
-  const { signal, abort } = useAbortSignal();
+  const controller = useAbortSignal();
 
   useEffect(() => {
     if (netlifyUser?.id) {
-      const service = new UserService(signal);
+      const service = new UserService(controller.signal);
 
       try {
         service.get(netlifyUser.id).then(setUser);
       } catch (error) {
         service.create(netlifyUser.id).then(setUser);
       }
-
-      return abort;
     }
-  }, [netlifyUser, abort, signal]);
+  }, [netlifyUser, controller]);
 
   /**
    * @param {number} resourceId the id of a mine resource
