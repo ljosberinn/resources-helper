@@ -1,48 +1,10 @@
-const createKey = key => `REACT_APP_${key}`;
-
-const variableExistsInEnv = key =>
-  process.env[key] && process.env[key].length > 0;
-
-const throwErrorForMissingEnv = key => {
-  throw new Error(`missing env variable: ${key}`);
+export default {
+  REPO_LINK: process.env.REACT_APP_REPO_LINK,
+  BRAND_NAME: process.env.REACT_APP_BRAND_NAME,
+  SITE_URL: process.env.REACT_APP_SITE_URL,
+  ENABLED_LANGUAGES: process.env.REACT_APP_ENABLED_LANGUAGES,
+  ENABLED_PROVIDER: process.env.REACT_APP_ENABLED_PROVIDER,
+  SENTRY_DSN: process.env.REACT_APP_SENTRY_DSN,
+  DISCORD_LINK: process.env.REACT_APP_DISCORD_LINK,
+  LOGROCKET_ID: process.env.REACT_APP_LOGROCKET_ID,
 };
-
-const requiredEnvVariables = [
-  'REPO_LINK',
-  'BRAND_NAME',
-  'SITE_URL',
-  'ENABLED_LANGUAGES',
-  'ENABLED_PROVIDER',
-];
-
-const requiredButHiddenVariables = ['CRON_TOKEN'];
-
-const optionalEnvVariables = [
-  'SENTRY_DSN',
-  'FAUNA_DB_SECRET',
-  'LOGROCKET_ID',
-  'DISCORD_LINK',
-];
-
-requiredButHiddenVariables.forEach(envName => {
-  const key = createKey(envName);
-
-  if (!variableExistsInEnv(key)) {
-    throwErrorForMissingEnv(key);
-  }
-});
-
-export default [...requiredEnvVariables, ...optionalEnvVariables].reduce(
-  (carry, envName) => {
-    const key = createKey(envName);
-
-    if (variableExistsInEnv(key)) {
-      carry[envName] = process.env[key];
-    } else if (requiredEnvVariables.includes(envName)) {
-      throwErrorForMissingEnv(key);
-    }
-
-    return carry;
-  },
-  {},
-);
