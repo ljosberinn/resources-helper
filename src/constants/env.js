@@ -4,6 +4,7 @@ const requiredEnvVariables = [
   'SITE_URL',
   'ENABLED_LANGUAGES',
   'ENABLED_PROVIDER',
+  'CRON_TOKEN',
 ];
 
 const optionalEnvVariables = [

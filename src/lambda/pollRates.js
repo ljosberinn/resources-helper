@@ -3,6 +3,7 @@ import {
   CREATED,
   INTERNAL_SERVER_ERROR,
   REQUEST_TIMEOUT,
+  UNAUTHORIZED,
 } from '../utils/statusCodes';
 import faunadb from 'faunadb';
 
@@ -14,7 +15,19 @@ const client = new faunadb.Client({
   secret: process.env.REACT_APP_FAUNA_DB_SECRET,
 });
 
-export async function handler() {
+const CRON_TOKEN = process.env.REACT_APP_CRON_TOKEN;
+
+export async function handler({ headers, httpMethod }) {
+  if (
+    httpMethod !== 'HEAD' ||
+    !headers['x-cron-token'] ||
+    headers['x-cron-token'] !== CRON_TOKEN
+  ) {
+    return {
+      statusCode: UNAUTHORIZED,
+    };
+  }
+
   const response = await fetch(URL);
 
   if (!response.ok) {
@@ -36,12 +49,12 @@ export async function handler() {
 
   try {
     // see https://docs.fauna.com/fauna/current/api/fql/functions/create#param_object
-    await client.query(
+    /*await client.query(
       q.Create(q.Collection('market'), {
         data,
         ttl: q.Time(createExpiration(data.ts * 1000)),
       }),
-    );
+    );*/
 
     return {
       statusCode: CREATED,

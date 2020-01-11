@@ -14,7 +14,11 @@
 
 ## Host
 
-- Netlify
+- [Netlify](https://netlify.com)
+
+## Cron
+
+- [cron-job.org](https://cron-job.org/en/)
 
 ## i18n
 
@@ -63,13 +67,13 @@
 - well, translate...
 - file a Pull Request
 
-# Requirements
+# Development
+
+## Requirements
 
 - [Node.js](https://nodejs.org/en/)
 - preferably [yarn](https://yarnpkg.com/en/)
 - preferably [VSCode](https://code.visualstudio.com/insiders/)
-
-# Development
 
 ```bash
 git clone https://github.com/ljosberinn/resources-helper
