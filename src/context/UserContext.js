@@ -2,17 +2,18 @@ import React, { useEffect, useState, createContext, useCallback } from 'react';
 import { useIdentityContext } from 'react-netlify-identity';
 import INITIAL_STATE from '../models/user';
 import { UserService } from '../services';
-import { useAbortSignal } from '../hooks';
 import MineUtil from '../utils/mine';
+import createSafeAbortController from '../constants/abortController';
 
-export const UserContext = createContext(INITIAL_STATE);
+export const UserContext = createContext();
 
 export default function UserProvider({ children }) {
   const { user: netlifyUser } = useIdentityContext();
   const [user, setUser] = useState(INITIAL_STATE);
-  const controller = useAbortSignal();
 
   useEffect(() => {
+    const controller = createSafeAbortController();
+
     if (netlifyUser?.id) {
       const service = new UserService(controller.signal);
 
@@ -22,7 +23,11 @@ export default function UserProvider({ children }) {
         service.create(netlifyUser.id).then(setUser);
       }
     }
-  }, [netlifyUser, controller]);
+
+    return () => {
+      controller.abort();
+    };
+  }, [netlifyUser]);
 
   /**
    * @param {number} resourceId the id of a mine resource

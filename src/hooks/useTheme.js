@@ -4,7 +4,7 @@ import { ThemeContext } from '../context/ThemeContext';
 /**
  * @returns {{
  * theme: 'light' | 'dark',
- * toggleTheme: () => void,
+ * toggleTheme: () => React.Dispatch<React.SetStateAction<'light' | 'dark'>>,
  * isLoading: boolean
  * }}
  */
