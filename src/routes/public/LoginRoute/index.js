@@ -68,6 +68,10 @@ export default function LoginRoute() {
   const handleSubmit = async event => {
     event.preventDefault();
 
+    if (error) {
+      setError(null);
+    }
+
     setLoading(true);
 
     try {
@@ -75,6 +79,7 @@ export default function LoginRoute() {
     } catch (error) {
       if (error?.json?.error_description) {
         const { error_description } = error.json;
+
         setError(
           errors[error_description]
             ? errors[error_description]
@@ -163,9 +168,11 @@ export default function LoginRoute() {
                                   <ValidityIconLeft type="mail" value={mail} />
                                 </Control>
 
-                                {error && error.includes('mail') && (
-                                  <Error> {t(`error:${error}`)}</Error>
-                                )}
+                                {error &&
+                                  (error === 'unknownUser' ||
+                                    error === 'mailUnknown') && (
+                                    <Error>{t(`error:${error}`)}</Error>
+                                  )}
                               </Field>
 
                               <Field>
