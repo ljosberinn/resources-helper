@@ -5,15 +5,9 @@ import {
   REQUEST_TIMEOUT,
   UNAUTHORIZED,
 } from '../utils/statusCodes';
-import faunadb from 'faunadb';
+import mysql from 'promise-mysql';
 
 const URL = 'https://www.resources-game.ch/exchange/kurseliste_json.txt';
-
-const q = faunadb.query;
-
-const client = new faunadb.Client({
-  secret: process.env.REACT_APP_FAUNA_DB_SECRET,
-});
 
 const CRON_TOKEN = process.env.REACT_APP_CRON_TOKEN;
 
@@ -28,7 +22,11 @@ export async function handler({ headers, httpMethod }) {
     };
   }
 
-  const response = await fetch(URL);
+  const response = await fetch(URL, {
+    headers: {
+      'x-app': 'resources-helper-4',
+    },
+  });
 
   if (!response.ok) {
     return {
@@ -38,41 +36,56 @@ export async function handler({ headers, httpMethod }) {
 
   const json = await response.json();
 
-  const data = {
-    ts: parseInt(json[0].TS),
-    data: json.map(({ ITEM_ID, SMKURS, NORMKURS }) => ({
-      id: parseInt(ITEM_ID),
-      base: parseInt(NORMKURS),
-      bid: parseInt(SMKURS),
-    })),
-  };
-
   try {
-    // see https://docs.fauna.com/fauna/current/api/fql/functions/create#param_object
-    await client.query(
-      q.Create(q.Collection('market'), {
-        data,
-        ttl: q.Time(createExpiration(data.ts * 1000)),
-      }),
-    );
+    const connection = await mysql.createConnection({
+      host: process.env.REACT_APP_DB_HOST,
+      user: process.env.REACT_APP_DB_USER,
+      password: process.env.REACT_APP_DB_PW,
+      database: process.env.REACT_APP_DB_NAME,
+    });
+
+    const queryString = createInsertQuery(json);
+
+    await connection.query(queryString);
+
+    connection.end();
 
     return {
       statusCode: CREATED,
-      headers: {
-        'Content-type': 'application/json',
-      },
     };
   } catch (error) {
+    console.error(error);
+
     return {
       statusCode: INTERNAL_SERVER_ERROR,
-      body: error.message,
     };
   }
 }
 
-function createExpiration(now) {
-  const date = new Date(now);
-  date.setFullYear(date.getFullYear() + 1);
+/**
+ *
+ * @param {{
+ *  ITEM_ID: string,
+ *  NORMKURS: string,
+ *  SMKURS: string
+ *  TS: string
+ * }[]
+ * } data
+ */
+const createInsertQuery = data => {
+  const timestamp = parseInt(data[0].TS);
 
-  return date.toISOString();
-}
+  const values = data
+    .map(
+      ({ ITEM_ID, SMKURS, NORMKURS }) =>
+        `(${[
+          timestamp,
+          parseInt(ITEM_ID),
+          parseInt(NORMKURS),
+          parseInt(SMKURS),
+        ].join(',')})`,
+    )
+    .join(', ');
+
+  return `INSERT INTO market (timestamp, itemId, base, bid) VALUES${values}`;
+};
