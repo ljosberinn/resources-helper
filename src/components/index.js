@@ -17,6 +17,7 @@ import Form from './Form';
 import Error from './Error';
 import LoginProviderGroup from './LoginProviderGroup';
 import DebouncedInput from './DebouncedInput';
+import PriceRangeSelection from './PriceRangeSelection';
 
 export {
   LoginProviderButton,
@@ -38,4 +39,5 @@ export {
   Error,
   LoginProviderGroup,
   DebouncedInput,
+  PriceRangeSelection,
 };
