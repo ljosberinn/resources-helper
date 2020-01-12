@@ -35,17 +35,18 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
+    "abort-controller": "^3.0.0",
     "dotenv-webpack": "^1.7.0",
+    "encoding": "^0.1.12",
+    "faunadb": "^2.10.2",
     "http-proxy-middleware": "^0.20.0",
     "netlify-lambda": "^1.6.3",
+    "node-fetch": "^2.6.0",
     "node-sass": "^4.13.0",
     "npm-run-all": "^4.1.5",
-    "sw-precache-cra": "^1.0.0",
-    "webpack-node-externals": "^1.7.2",
-    "node-fetch": "^2.6.0",
     "promise-mysql": "^4.1.1",
-    "abort-controller": "^3.0.0",
-    "faunadb": "^2.10.2"
+    "sw-precache-cra": "^1.0.0",
+    "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
     "start": "run-p start:**",
