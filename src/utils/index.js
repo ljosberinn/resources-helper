@@ -4,21 +4,21 @@ import { allowedSpecialCharacters, characterPattern } from './validators';
  *
  * @param {string} string
  */
-const stringContainsNumber = string =>
+export const stringContainsNumber = string =>
   string.split('').filter(Number).length > 0;
 
 /**
  *
  * @param {string} string
  */
-const stringContainsSpecialCharacter = string =>
+export const stringContainsSpecialCharacter = string =>
   new RegExp(`[${allowedSpecialCharacters.join('')}]`).test(string);
 
 /**
  *
  * @param {string} string
  */
-const stringContainsLetter = string =>
+export const stringContainsLetter = string =>
   new RegExp(characterPattern).test(string);
 
 /**
@@ -26,7 +26,7 @@ const stringContainsLetter = string =>
  * @param {string} str
  * @returns {string}
  */
-const upperCaseFirstCharacter = str =>
+export const upperCaseFirstCharacter = str =>
   str.charAt(0).toUpperCase() + str.slice(1);
 
 /**
@@ -34,7 +34,7 @@ const upperCaseFirstCharacter = str =>
  * @param {RequestInfo} url
  * @param {RequestInit} options
  */
-const abortableFetchJSON = async (url, options) => {
+export const abortableFetchJSON = async (url, options) => {
   try {
     const response = await fetch(url, options);
 
@@ -48,13 +48,4 @@ const abortableFetchJSON = async (url, options) => {
       throw Error(error);
     }
   }
-};
-
-export {
-  stringContainsNumber,
-  stringContainsSpecialCharacter,
-  allowedSpecialCharacters,
-  stringContainsLetter,
-  upperCaseFirstCharacter,
-  abortableFetchJSON,
 };

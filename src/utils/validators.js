@@ -1,4 +1,4 @@
-const allowedSpecialCharacters = [
+export const allowedSpecialCharacters = [
   '!',
   '"',
   '§',
@@ -17,7 +17,7 @@ const allowedSpecialCharacters = [
   '_',
   '-',
 ];
-const characterPattern = '[A-Za-z]';
+export const characterPattern = '[A-Za-z]';
 const passwordPattern = `^(?=.*${characterPattern})(?=.*[0-9])(?=.{8,}).*$`;
 const usernamePattern = '^[a-zA-Z0-9]+(?:[._ -]?[a-zA-Z0-9])*$';
 const apiKeyPattern = '[\\da-z]{45}';
@@ -62,18 +62,16 @@ const isValidMail = mail => {
   }
 };
 
-const validate = {
+export const validate = {
   mail: isValidMail,
   password: isValidPassword,
   username: isValidUsername,
   apiKey: isValidAPIKey,
 };
 
-const pattern = {
+export const pattern = {
   mail: '',
   password: passwordPattern,
   userName: usernamePattern,
   apiKey: apiKeyPattern,
 };
-
-export { validate, pattern, allowedSpecialCharacters, characterPattern };
