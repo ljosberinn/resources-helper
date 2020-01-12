@@ -29,10 +29,32 @@ const stringContainsLetter = string =>
 const upperCaseFirstCharacter = str =>
   str.charAt(0).toUpperCase() + str.slice(1);
 
+/**
+ *
+ * @param {RequestInfo} url
+ * @param {RequestInit} options
+ */
+const abortableFetchJSON = async (url, options) => {
+  try {
+    const response = await fetch(url, options);
+
+    if (response.ok) {
+      const json = await response.json();
+
+      return json;
+    }
+  } catch (error) {
+    if (error.name !== 'AbortError') {
+      throw Error(error);
+    }
+  }
+};
+
 export {
   stringContainsNumber,
   stringContainsSpecialCharacter,
   allowedSpecialCharacters,
   stringContainsLetter,
   upperCaseFirstCharacter,
+  abortableFetchJSON,
 };

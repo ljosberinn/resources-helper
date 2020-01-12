@@ -1,4 +1,5 @@
 import ThemeProvider from './ThemeContext';
 import UserProvider from './UserContext';
+import RateProvider from './RateContext';
 
-export { ThemeProvider, UserProvider };
+export { ThemeProvider, UserProvider, RateProvider };

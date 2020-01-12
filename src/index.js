@@ -2,7 +2,7 @@ import React, { StrictMode } from 'react';
 import { render } from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { ThemeProvider, UserProvider } from './context';
+import { ThemeProvider, UserProvider, RateProvider } from './context';
 import './i18n';
 import { IdentityContextProvider } from 'react-netlify-identity';
 import * as Sentry from '@sentry/browser';
@@ -51,20 +51,21 @@ function identifyUser(user) {
   }
 
   LogRocket.identify(null);
-  window.location.pathname = '/';
 }
 
 render(
   <StrictMode>
-    <IdentityContextProvider url={env.SITE_URL} onAuthChange={identifyUser}>
+    <Router>
       <ThemeProvider>
-        <UserProvider>
-          <Router>
-            <App />
-          </Router>
-        </UserProvider>
+        <IdentityContextProvider url={env.SITE_URL} onAuthChange={identifyUser}>
+          <UserProvider>
+            <RateProvider>
+              <App />
+            </RateProvider>
+          </UserProvider>
+        </IdentityContextProvider>
       </ThemeProvider>
-    </IdentityContextProvider>
+    </Router>
   </StrictMode>,
   document.getElementById('root'),
 );

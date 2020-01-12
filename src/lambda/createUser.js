@@ -1,12 +1,5 @@
-import faunadb from 'faunadb';
 import user from '../models/user';
 import { BAD_REQUEST, CREATED } from '../utils/statusCodes';
-
-const q = faunadb.query;
-
-const client = new faunadb.Client({
-  secret: process.env.REACT_APP_FAUNA_DB_SECRET,
-});
 
 export async function handler({ httpMethod, body }, context) {
   if (httpMethod !== 'POST' || body.length === 0) {
