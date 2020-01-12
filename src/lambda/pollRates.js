@@ -48,8 +48,7 @@ export async function handler({ headers, httpMethod }) {
     const queryString = createInsertQuery(json);
 
     await connection.query(queryString);
-
-    connection.end();
+    await connection.end();
 
     return {
       statusCode: CREATED,
