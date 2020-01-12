@@ -42,6 +42,7 @@ export async function handler({ headers, httpMethod }) {
       user: process.env.REACT_APP_DB_USER,
       password: process.env.REACT_APP_DB_PW,
       database: process.env.REACT_APP_DB_NAME,
+      connectTimeout: 25 * 1000, // might prevent PROTOCOL_SEQUENCE_TIMEOUT
     });
 
     const queryString = createInsertQuery(json);
