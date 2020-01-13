@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { PRICE_AGE_RANGES } from '../constants/rates';
+import PRICE_AGE_RANGES from '../constants/priceRanges';
 import createSafeAbortController from '../constants/abortController';
 import { abortableFetchJSON } from '../utils';
 
@@ -9,7 +9,9 @@ const ENDPOINT = '.netlify/functions/getRates';
 
 export default function RateProvider({ children }) {
   const [rates, setRates] = useState([]);
-  const [selectedPriceRange, setSelectedRange] = useState(PRICE_AGE_RANGES[4]);
+  const [selectedPriceRange, setSelectedRange] = useState(
+    PRICE_AGE_RANGES[4] || PRICE_AGE_RANGES[0],
+  );
 
   useEffect(() => {
     const params = new URLSearchParams({
@@ -34,7 +36,7 @@ export default function RateProvider({ children }) {
   return (
     <RateContext.Provider
       value={{
-        priceAgeRanges: PRICE_AGE_RANGES,
+        activePriceAgeRanges: PRICE_AGE_RANGES,
         rates,
         selectedPriceRange,
         setSelectedRange,
