@@ -8,7 +8,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Icon from './Icon';
 import styles from './PriceRangeSelection.module.scss';
-import PRICE_AGE_RANGES from '../constants/priceRanges';
 
 export default function PriceRangeSelection() {
   const { t } = useTranslation();
