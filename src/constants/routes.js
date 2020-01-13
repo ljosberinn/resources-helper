@@ -1,5 +1,6 @@
 import {
   faCog,
+  faSitemap,
   faBookReader,
   faShieldAlt,
   faUserEdit,
@@ -56,17 +57,17 @@ export const TOS = {
   icon: faBookReader,
 };
 
+export const API = {
+  routerPath: '/api',
+  clientPath: '/api',
+  title: 'routes:api',
+  icon: faSitemap,
+};
+
 /** PRIVATE ROUTES */
 export const SETTINGS = {
   routerPath: '/settings/:setting',
   clientPath: '/settings/site',
   title: 'routes:settings',
   icon: faCog,
-};
-
-export const MINES = {
-  routerPath: '/mines',
-  clientPath: '/mines',
-  title: 'routes:mines',
-  icon: undefined,
 };

@@ -10,6 +10,10 @@ export const SHARED_ROUTES = {
       /* webpackChunkName: "shared.privacypolicy" */ './PrivacyPolicyRoute'
     ),
   ),
+
+  [ROUTES.API.routerPath]: LoadableComponent(() =>
+    import(/* webpackChunkName: "shared.api" */ './APIPage'),
+  ),
 };
 
 export const LANGUAGE_ROUTE = LoadableComponent(() =>
