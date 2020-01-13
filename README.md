@@ -43,6 +43,7 @@
 
 - [Netlify Functions](https://www.netlify.com/products/functions/)
 - [FaunaDB](https://fauna.com/)
+- good old MySQL via [node-promise-mysql](https://github.com/CodeFoodPixels/node-promise-mysql)
 
 ## Auth
 
