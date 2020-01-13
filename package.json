@@ -36,6 +36,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "abort-controller": "^3.0.0",
+    "customize-cra": "^0.9.1",
+    "customize-cra-react-refresh": "^1.0.1",
     "dotenv-webpack": "^1.7.0",
     "encoding": "^0.1.12",
     "faunadb": "^2.10.2",
@@ -45,20 +47,22 @@
     "node-sass": "^4.13.0",
     "npm-run-all": "^4.1.5",
     "promise-mysql": "^4.1.1",
+    "react-app-rewired": "^2.1.5",
+    "source-map-explorer": "^2.2.2",
     "sw-precache-cra": "^1.0.0",
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
+    "analyze": "yarn run build && source-map-explorer 'build/static/js/*.js'",
     "start": "run-p start:**",
-    "start:app": "react-scripts start",
-    "start:lambda": "netlify-lambda serve -c ./config/webpack.js src/lambda",
+    "start:app": "react-app-rewired start",
+    "start:lambda": "netlify-lambda serve -c ./config/lambda-webpack.js src/lambda",
     "build": "run-p build:**",
-    "build:app": "react-scripts build && sw-precache-cra --config ./config/sw-config.js",
-    "build:lambda": "netlify-lambda build -c ./config/webpack.js src/lambda",
+    "build:app": "react-app-rewired build && sw-precache-cra --config ./config/sw-config.js",
+    "build:lambda": "netlify-lambda build -c ./config/lambda-webpack.js src/lambda",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "nuke-modules": "rm -rf node_modules/ && yarn install",
-    "postinstall": "node ./scripts/enable-css-sourcemaps.js"
+    "nuke-modules": "rm -rf node_modules/ && yarn install"
   },
   "eslintConfig": {
     "extends": "react-app"
