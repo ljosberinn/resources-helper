@@ -1,5 +1,14 @@
+/**
+ * @returns {AbortController | { signal: null, abort: () => void}}
+ */
+export function createSafeAbortController() {
+  return 'AbortController' in window
+    ? new AbortController()
+    : { signal: null, abort: () => {} };
+}
+
 // via https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
-const hasLocalStorage = (() => {
+export const hasLocalStorage = (() => {
   try {
     const x = '__storage_test__';
 
@@ -25,5 +34,3 @@ const hasLocalStorage = (() => {
     );
   }
 })();
-
-export default hasLocalStorage;

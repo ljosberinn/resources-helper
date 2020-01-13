@@ -3,7 +3,7 @@ import { useIdentityContext } from 'react-netlify-identity';
 import INITIAL_STATE from '../models/user';
 import { UserService } from '../services';
 import MineUtil from '../utils/mine';
-import createSafeAbortController from '../constants/abortController';
+import { createSafeAbortController } from '../constants/browserAPIs';
 
 export const UserContext = createContext();
 
