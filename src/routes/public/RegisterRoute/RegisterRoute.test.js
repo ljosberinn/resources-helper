@@ -10,16 +10,22 @@ const validPassword = 'a1234567';
 const invalidPassword = '12345678';
 
 describe('<RegisterRoute />', () => {
-  test('renders successfully', () => {
+  it('renders successfully', () => {
     render(<RegisterRoute />);
   });
 
-  test('disallows registration if passwords dont match', () => {
+  it('disallows registration if passwords dont match', () => {
     const { getByTestId } = render(<RegisterRoute />);
 
+    const mailInput = getByTestId('mail');
+    const tosCheckbox = getByTestId('tos');
     const passwordInput = getByTestId('password');
     const confirmPasswordInput = getByTestId('confirm-password');
     const submitButton = getByTestId('sign-up');
+
+    // setup
+    fireEvent.input(mailInput, { target: { value: validMail } });
+    fireEvent.input(tosCheckbox, { target: { checked: true } });
 
     expect(submitButton.disabled).toBeTruthy();
     expect(confirmPasswordInput.disabled).toBeTruthy();
