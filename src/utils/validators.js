@@ -18,7 +18,8 @@ export const allowedSpecialCharacters = [
   '-',
 ];
 export const characterPattern = '[A-Za-z]';
-const passwordPattern = `^(?=.*${characterPattern})(?=.*[0-9])(?=.{8,}).*$`;
+export const passwordMinLength = 8;
+const passwordPattern = `^(?=.*${characterPattern})(?=.*[0-9])(?=.{${passwordMinLength},}).*$`;
 const usernamePattern = '^[a-zA-Z0-9]+(?:[._ -]?[a-zA-Z0-9])*$';
 const apiKeyPattern = '[\\da-z]{45}';
 

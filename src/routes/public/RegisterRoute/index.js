@@ -8,6 +8,8 @@ import { useIdentityContext } from 'react-netlify-identity';
 import { useTranslation } from 'react-i18next';
 import RegistrationSuccess from './RegistrationSuccess';
 import RegistrationForm from './RegistrationForm';
+import { useTheme } from '../../../hooks';
+import i18n from 'i18next';
 
 const errors = {
   mailInUse: 'mailInUse',
@@ -18,6 +20,7 @@ const errors = {
  */
 export default function RegisterRoute() {
   const { signupUser, isLoggedIn, isConfirmedUser } = useIdentityContext();
+  const { theme } = useTheme();
 
   const [data, setData] = useState({
     mail: '',
@@ -48,7 +51,10 @@ export default function RegisterRoute() {
       setIsLoading(true);
 
       try {
-        await signupUser(data.mail, data.password);
+        await signupUser(data.mail, data.password, {
+          language: i18n.language,
+          theme,
+        });
         setSuccessfullyRegistered(true);
       } catch (error) {
         console.error(error);
@@ -63,7 +69,7 @@ export default function RegisterRoute() {
         setIsLoading(false);
       }
     },
-    [signupUser, data.mail, data.password],
+    [signupUser, data.mail, data.password, theme],
   );
 
   if (isLoggedIn && isConfirmedUser) {

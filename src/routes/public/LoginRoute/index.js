@@ -1,5 +1,9 @@
 import React, { useState, useCallback } from 'react';
-import { validate, pattern } from '../../../utils/validators';
+import {
+  validate,
+  pattern,
+  passwordMinLength,
+} from '../../../utils/validators';
 import {
   Card,
   Section,
@@ -169,8 +173,11 @@ export default function LoginRoute() {
                                 </Control>
 
                                 {error &&
-                                  (error === 'unknownUser' ||
-                                    error === 'mailUnknown') && (
+                                  [
+                                    'unknownUser',
+                                    'mailUnknown',
+                                    'mailUnconfirmed',
+                                  ].includes(error) && (
                                     <Error>{t(`error:${error}`)}</Error>
                                   )}
                               </Field>
@@ -191,6 +198,7 @@ export default function LoginRoute() {
                                     required
                                     autoComplete="current-password"
                                     data-testid="password"
+                                    minLength={passwordMinLength}
                                   />
                                   <ValidityIconLeft
                                     type="password"
@@ -199,7 +207,7 @@ export default function LoginRoute() {
                                 </Control>
 
                                 {error && error.includes('password') && (
-                                  <Error> {t(`error:${error}`)}</Error>
+                                  <Error>{t(`error:${error}`)}</Error>
                                 )}
                               </Field>
 
