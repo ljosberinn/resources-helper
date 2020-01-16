@@ -20,9 +20,8 @@ const errors = {
  */
 export default function ConfirmPasswordResetForm({ token }) {
   const { t } = useTranslation(['resetPassword', 'error', 'settings']);
-
   const { replace } = useHistory();
-  const { recoverAccount, setUser, updateUser, user } = useIdentityContext();
+  const { recoverAccount, setUser, updateUser } = useIdentityContext();
 
   const [{ password, confirmPassword }, setPassword] = useState({
     password: '',
@@ -42,48 +41,35 @@ export default function ConfirmPasswordResetForm({ token }) {
       return;
     }
 
-    // this is effectively a login, triggering a re-render
-    setUser(userObj);
+    updateUser({ password })
+      .then(() => {
+        // kill internal react-netlify-identity state
+        setUser(undefined);
+        // move use to login
+        replace(ROUTES.LOGIN.clientPath);
+      })
+      .catch(error => {
+        // ignore errors here - react-netlify-identity
+        console.error(error);
+      });
   };
 
+  // only runs if a token exists that hasn't been validated yet
   useEffect(() => {
-    if (!userObj) {
-      // only runs if a token exists that hasn't been validated yet
-      async function verifyToken() {
-        try {
-          const user = await recoverAccount(token);
-
-          if (user.app_metadata.provider !== 'email') {
-            setError(errors.isProvider);
-          } else {
-            setUserObj(user);
-          }
-        } catch (error) {
-          setError(errors.invalidToken);
+    recoverAccount()
+      .then(user => {
+        if (user.app_metadata.provider !== 'email') {
+          setError(errors.isProvider);
+        } else {
+          setUserObj(user);
         }
-      }
-
-      verifyToken();
-    } else if (user) {
-      // changes the password after re-render with login
-      async function doPasswordChange() {
-        try {
-          // update the password
-          await updateUser({ password });
-          // kill internal react-netlify-identity state
-          setUser(undefined);
-          // move use to login
-          replace(ROUTES.LOGIN.clientPath);
-        } catch (error) {
-          // ignore errors here - react-netlify-identity
-        }
-      }
-
-      doPasswordChange();
-    }
-    // react-netlify-identity functions are excluded because they trigger a re-run of verifyToken
-    // eslint-disable-next-line
-  }, [password, userObj, replace, token, user]);
+      })
+      .catch(() => {
+        setError(errors.invalidToken);
+      });
+    // react-netlify-identity functions are excluded because they trigger a re-run
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+  }, []);
 
   const isDisabled =
     !validate.password(password) || password !== confirmPassword;

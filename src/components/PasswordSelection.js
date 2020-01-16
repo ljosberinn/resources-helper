@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect, memo } from 'react';
 import { ValidityIconLeft, Icon, Field } from '.';
-import { validate, pattern } from '../utils/validators';
+import { validate, pattern, passwordMinLength } from '../utils/validators';
 import { Message, Label, Help, Input, Control, Block } from 'rbx';
 import { stringContainsNumber, stringContainsLetter } from '../utils';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -19,18 +19,9 @@ const criteria = [
     info: 'passwordCriteriaNumber',
   },
   {
-    validate: password => password.length > 7,
+    validate: password => password.length >= passwordMinLength,
     info: 'passwordCriteriaLength',
   },
-  /*{
-    validate: password => stringContainsSpecialCharacter(password),
-    info: (
-      <span>
-        - must contain at least one special character{' '}
-        <Tag>{allowedSpecialCharacters.join(' ')}</Tag>
-      </span>
-    ),
-  },*/
 ];
 
 /**
@@ -88,6 +79,7 @@ export default memo(function PasswordSelection({
             required
             autoComplete="new-password"
             data-testid="password"
+            minLength={passwordMinLength}
           />
           <ValidityIconLeft type="password" value={password} />
 
@@ -125,6 +117,7 @@ export default memo(function PasswordSelection({
                   : undefined
               }
               data-testid="confirm-password"
+              minLength={passwordMinLength}
             />
 
             <Icon
