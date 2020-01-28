@@ -1,0 +1,31 @@
+@import '../../../../assets/scss/breakpoints';
+
+.media {
+  overflow-x: unset;
+
+  @include mobile {
+    flex-direction: column;
+
+    figure {
+      align-self: center;
+      margin-right: 0;
+    }
+
+    h1 {
+      text-align: center;
+
+      &[class*='title'] {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    p[class='help'] {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    div[class='media-content'] {
+      width: 100%;
+    }
+  }
+}

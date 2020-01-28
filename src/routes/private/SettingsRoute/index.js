@@ -3,7 +3,11 @@ import { Section, Title, Column, Box, Tab } from 'rbx';
 import { useTranslation } from 'react-i18next';
 import { TemplatedHelmet, Icon } from '../../../components';
 import { Route, Link, Switch, useLocation } from 'react-router-dom';
-import { faSlidersH, faUserCog } from '@fortawesome/free-solid-svg-icons';
+import {
+  faSlidersH,
+  faUserCog,
+  faUserShield,
+} from '@fortawesome/free-solid-svg-icons';
 import LoadableComponent from '../../loadUtils';
 
 const tabs = [
@@ -24,6 +28,16 @@ const tabs = [
     ),
     path: '/settings/account',
     icon: faUserCog,
+  },
+  {
+    name: 'accountInformation',
+    component: LoadableComponent(() =>
+      import(
+        /* webpackChunkName: "private.settings.accountinfo" */ './AccountInformation'
+      ),
+    ),
+    path: '/settings/meta',
+    icon: faUserShield,
   },
 ];
 
@@ -59,13 +73,13 @@ export default function Settings() {
                 ))}
               </Tab.Group>
 
-              <Switch>
-                <Suspense fallback={null}>
+              <Suspense fallback={null}>
+                <Switch>
                   {tabs.map(({ path, component }) => (
                     <Route exact path={path} component={component} key={path} />
                   ))}
-                </Suspense>
-              </Switch>
+                </Switch>
+              </Suspense>
             </Box>
           </Column>
         </Column.Group>
