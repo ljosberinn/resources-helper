@@ -48,5 +48,12 @@ html {
         background: $dark-primary;
       }
     }
+
+    .content {
+      ul,
+      dd {
+        margin-left: initial;
+      }
+    }
   }
 }
