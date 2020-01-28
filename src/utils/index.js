@@ -36,7 +36,10 @@ export const upperCaseFirstCharacter = str =>
  */
 export const abortableFetchJSON = async (url, options) => {
   try {
-    const response = await fetch(url, options);
+    const response = await fetch(url, {
+      ...options,
+      headers: { ...options.headers, Accept: 'application/json' },
+    });
 
     if (response.ok) {
       const json = await response.json();

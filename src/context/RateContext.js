@@ -5,7 +5,7 @@ import { abortableFetchJSON } from '../utils';
 
 export const RateContext = createContext();
 
-const ENDPOINT = '.netlify/functions/getRates';
+const ENDPOINT = '/.netlify/functions/getRates';
 
 export default function RateProvider({ children }) {
   const [rates, setRates] = useState([]);
