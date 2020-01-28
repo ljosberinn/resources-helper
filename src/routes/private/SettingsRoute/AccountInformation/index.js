@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNetlifyIdentity } from 'react-netlify-identity';
+import { useIdentityContext } from 'react-netlify-identity';
 import { Media, Image, Help, Content, Title } from 'rbx';
 import { AvatarSvg } from '../../../../components/themedSvgs';
 import AccountMetadata from './AccountMetadata';
@@ -18,7 +18,7 @@ export default function AccountInformation() {
       _fromStorage: fromLocalStorage,
       user_metadata: userMetadata,
     },
-  } = useNetlifyIdentity();
+  } = useIdentityContext();
 
   const { provider } = appMetadata;
   const { avatar_url: avatar, full_name: name } = userMetadata;
