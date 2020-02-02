@@ -1,13 +1,13 @@
 import React, { Suspense } from 'react';
 import { Section, Title, Column, Box, Tab } from 'rbx';
 import { useTranslation } from 'react-i18next';
-import { TemplatedHelmet, Icon } from '../../../components';
 import { Route, Link, Switch, useLocation } from 'react-router-dom';
 import {
   faSlidersH,
   faUserCog,
   faUserShield,
 } from '@fortawesome/free-solid-svg-icons';
+import { TemplatedHelmet, Icon } from '../../../components';
 import LoadableComponent from '../../loadUtils';
 
 const tabs = [
@@ -41,9 +41,6 @@ const tabs = [
   },
 ];
 
-/**
- * @returns {React.FC} Settings
- */
 export default function Settings() {
   const { t } = useTranslation('settings');
   const { pathname } = useLocation();

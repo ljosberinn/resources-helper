@@ -4,11 +4,11 @@ import classnames from 'classnames';
 
 /**
  *
- * @returns {React.FC<{
+ * @param {{
  *  children: React.ReactChildren,
  * className?: string,
  * isFloatingLabel?: boolean
- * }>} Field
+ * }}
  */
 export default function Field({
   children,

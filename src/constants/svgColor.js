@@ -14,6 +14,7 @@ const general = {
 /**
  *
  * @param {'light' | 'dark'} theme
+ *
  * @returns {{
  * primary: string,
  * purple: string

@@ -15,9 +15,6 @@ const RedirectToHome = LoadableComponent(() =>
   import('./routes/RedirectToHome'),
 );
 
-/**
- * @returns {React.FC} App
- */
 export default function App() {
   const { pathname } = useLocation();
   const { replace } = useHistory();

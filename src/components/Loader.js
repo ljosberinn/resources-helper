@@ -1,17 +1,17 @@
 import React from 'react';
-import Icon from './Icon';
 import classnames from 'classnames';
+import Icon from './Icon';
 
 /**
  *
  * @see https://buefy.org/documentation/loading
  * @see https://github.com/buefy/buefy/blob/dev/src/components/loading/Loading.vue
  *
- * @returns {React.FC<{
+ * @param {{
  * isFullPage: boolean,
  * icon?: import('@fortawesome/free-solid-svg-icons').IconDefinition,
  * color?: 'light' | 'dark'
- * }>} Loader
+ * }}
  */
 export default function Loader({ icon, isFullPage = false, color }) {
   return (

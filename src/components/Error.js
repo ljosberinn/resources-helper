@@ -4,9 +4,9 @@ import { Fade } from 'react-awesome-reveal';
 
 /**
  *
- * @returns {React.FC<{
+ * @param {{
  *  children: React.Children
- * }>} Error
+ * }}
  */
 export default function Error({ children, ...rest }) {
   return (

@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import { Navbar as RBXNavbar, Button } from 'rbx';
-import LanguageSwitch from './LanguageSwitch';
-import Icon from './Icon';
-import Loader from './Loader';
-import ThemeSwitch from './ThemeSwitch';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import * as ROUTES from '../constants/routes';
 import { useIdentityContext } from 'react-netlify-identity';
+import * as ROUTES from '../constants/routes';
 import { REPO_LINK, DISCORD_LINK } from '../constants/env';
+import { useNavigate } from '../hooks';
+import ThemeSwitch from './ThemeSwitch';
+import Loader from './Loader';
+import Icon from './Icon';
+import LanguageSwitch from './LanguageSwitch';
 
-/**
- * @returns {React.FC} LogoIpsumSvg
- */
 const LogoIpsumSvg = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 39" height="32">
     <g fill="currentColor">
@@ -24,18 +21,15 @@ const LogoIpsumSvg = () => (
   </svg>
 );
 
-/**
- * @returns {React.FC} Navbar
- */
 export default function Navbar() {
   const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   const { isLoggedIn, logoutUser, isConfirmedUser } = useIdentityContext();
-  const { push } = useHistory();
+  const navigate = useNavigate();
   const { t } = useTranslation(['navigation', 'routes']);
 
   const handleLogout = async () => {
-    push('/');
+    navigate('/');
 
     setIsLoggingOut(true);
     await logoutUser();
@@ -107,9 +101,9 @@ export default function Navbar() {
 
 /**
  *
- * @returns {React.FC<{
+ * @param {{
  * children: React.ReactChildren
- * }>} NavButton
+ * }}
  */
 function NavButton({ children, ...rest }) {
   return (
@@ -121,12 +115,12 @@ function NavButton({ children, ...rest }) {
 
 /**
  *
- * @returns {React.FC<{
+ * @param {{
  * isLoggingOut: boolean,
  * isConfirmedUser: boolean,
  * handleLogout: () => Promise<void>,
  * t: import('react-i18next').UseTranslationResponse['t']
- * }>} AuthenticatedNavButtons
+ * }}
  */
 function AuthenticatedNavButtons({
   isLoggingOut,

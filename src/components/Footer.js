@@ -1,21 +1,21 @@
 import React from 'react';
 import { Footer as RBXFooter, Container, Column, Generic } from 'rbx';
 import { NavLink } from 'react-router-dom';
+import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { useTranslation } from 'react-i18next';
+import { useIdentityContext } from 'react-netlify-identity';
+import * as ROUTES from '../constants/routes';
+import { REPO_LINK, DISCORD_LINK, BRAND_NAME } from '../constants/env';
 import ExternalLink from './ExternalLink';
 import LanguageSwitch from './LanguageSwitch';
 import Icon from './Icon';
 import ThemeSwitch from './ThemeSwitch';
-import * as ROUTES from '../constants/routes';
-import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
-import { useTranslation } from 'react-i18next';
-import { useIdentityContext } from 'react-netlify-identity';
-import { REPO_LINK, DISCORD_LINK, BRAND_NAME } from '../constants/env';
 
 /**
  *
- * @returns {React.FC<{
+ * @param {{
  * children: React.ReactChildren
- * }>} Link
+ * }}
  */
 function Link({ children, ...rest }) {
   return (
@@ -25,9 +25,6 @@ function Link({ children, ...rest }) {
   );
 }
 
-/**
- * @returns {React.FC} Footer
- */
 export default function Footer() {
   const { isLoggedIn, isConfirmedUser } = useIdentityContext();
   const { t } = useTranslation(['footer', 'routes', 'navigation']);
@@ -128,7 +125,7 @@ export default function Footer() {
 
 /**
  *
- * @returns {React.FC<{
+ * @param {{
  * route: typeof ROUTES[number],
  * t: import('i18next').TFunction
  * }} InternalLink

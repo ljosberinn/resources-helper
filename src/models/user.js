@@ -1,16 +1,16 @@
-import FACTORIES from './factories';
-import BUILDINGS from './buildings';
-import MINES from './mines';
-import SETTINGS from './settings';
-import META from './meta';
-import HEADQUARTER from './headquarter';
+import factories from './factories';
+import buildings from './buildings';
+import mines from './mines';
+import settings from './settings';
+import meta from './meta';
+import headquarter from './headquarter';
 
 export default {
   id: null,
-  settings: SETTINGS,
-  factories: FACTORIES,
-  mines: MINES,
-  buildings: BUILDINGS,
-  headquarter: HEADQUARTER,
-  meta: META,
+  settings,
+  factories,
+  mines,
+  buildings,
+  headquarter,
+  meta,
 };

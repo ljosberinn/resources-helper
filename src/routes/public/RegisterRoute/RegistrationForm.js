@@ -1,5 +1,10 @@
 import React from 'react';
-import { validate } from '../../../utils/validators';
+import { Block, Help, Label, Button, Divider, Control, Input } from 'rbx';
+import { Link } from 'react-router-dom';
+import { Trans } from 'react-i18next';
+import { Fade } from 'react-awesome-reveal';
+import Shake from 'react-reveal/Shake';
+import * as ROUTES from '../../../constants/routes';
 import {
   ValidityIconLeft,
   Checkbox,
@@ -7,16 +12,11 @@ import {
   LoginProviderGroup,
   PasswordSelection,
 } from '../../../components';
-import { Block, Help, Label, Button, Divider, Control, Input } from 'rbx';
-import { Link } from 'react-router-dom';
-import * as ROUTES from '../../../constants/routes';
-import { Trans } from 'react-i18next';
-import { Fade } from 'react-awesome-reveal';
-import Shake from 'react-reveal/Shake';
+import { validate } from '../../../utils/validators';
 
 /**
  *
- * @returns {React.FC<{
+ * @param {{
  * error: string,
  * handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
  * isLoading: boolean,
@@ -25,7 +25,7 @@ import Shake from 'react-reveal/Shake';
  * confirmPassword: string,
  * tos: boolean,
  * t: import('i18next').TFunction
- * }>} RegistrationForm
+ * }}
  */
 export default function RegistrationForm({
   error,

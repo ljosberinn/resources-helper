@@ -2,10 +2,10 @@ import React from 'react';
 
 /**
  *
- * @returns {React.FC<{
+ * @param {{
  * href: string,
  * children: React.ReactChildren
- * }>} ExternalLink
+ * }}
  */
 export default function ExternalLink({ href, children, ...rest }) {
   return (

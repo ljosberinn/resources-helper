@@ -18,6 +18,7 @@ import Error from './Error';
 import LoginProviderGroup from './LoginProviderGroup';
 import DebouncedInput from './DebouncedInput';
 import PriceRangeSelection from './PriceRangeSelection';
+import ToastCloseButton from './ToastCloseButton';
 
 export {
   LoginProviderButton,
@@ -40,4 +41,5 @@ export {
   LoginProviderGroup,
   DebouncedInput,
   PriceRangeSelection,
+  ToastCloseButton,
 };

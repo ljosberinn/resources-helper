@@ -2,12 +2,12 @@ import React from 'react';
 
 /**
  *
- * @returns {React.FC<{
+ * @param {{
  * onSubmit: (e: React.FormEvent<HTMLFormElement>) => void,
  * spellCheck: boolean,
  * autoCorrect: 'on' | 'off',
  * children: React.ReactChildren
- * }>} Form
+ * }}
  */
 export default function Form({
   onSubmit,
