@@ -82,7 +82,11 @@
             "parent",
             "sibling",
             "index"
-          ]
+          ],
+          "alphabetize": {
+            "order": "asc"
+          },
+          "newlines-between": "always"
         }
       ]
     }

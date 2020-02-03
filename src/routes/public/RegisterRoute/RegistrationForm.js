@@ -1,10 +1,10 @@
-import React from 'react';
 import { Block, Help, Label, Button, Divider, Control, Input } from 'rbx';
-import { Link } from 'react-router-dom';
-import { Trans } from 'react-i18next';
+import React from 'react';
 import { Fade } from 'react-awesome-reveal';
+import { Trans } from 'react-i18next';
 import Shake from 'react-reveal/Shake';
-import * as ROUTES from '../../../constants/routes';
+import { Link } from 'react-router-dom';
+
 import {
   ValidityIconLeft,
   Checkbox,
@@ -12,6 +12,7 @@ import {
   LoginProviderGroup,
   PasswordSelection,
 } from '../../../components';
+import * as ROUTES from '../../../constants/routes';
 import { validate } from '../../../utils/validators';
 
 /**

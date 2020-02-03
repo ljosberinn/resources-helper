@@ -1,9 +1,10 @@
 import React, { useEffect, useState, createContext, useCallback } from 'react';
 import { useIdentityContext } from 'react-netlify-identity';
+
+import { createSafeAbortController } from '../constants/browserAPIs';
 import INITIAL_STATE from '../models/user';
 import { UserService } from '../services';
 import MineUtil from '../utils/mine';
-import { createSafeAbortController } from '../constants/browserAPIs';
 
 export const UserContext = createContext();
 

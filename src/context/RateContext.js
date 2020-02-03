@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
-import PRICE_AGE_RANGES from '../constants/priceRanges';
+
 import { createSafeAbortController } from '../constants/browserAPIs';
+import PRICE_AGE_RANGES from '../constants/priceRanges';
 import { abortableFetchJSON } from '../utils';
 
 export const RateContext = createContext();

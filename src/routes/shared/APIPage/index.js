@@ -1,8 +1,9 @@
-import React from 'react';
-import { useUser } from '../../../hooks';
-import { TemplatedHelmet } from '../../../components';
 import { Section, Box, Column, Title } from 'rbx';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { TemplatedHelmet } from '../../../components';
+import { useUser } from '../../../hooks';
 
 export default function APIPage() {
   const { t } = useTranslation('routes');

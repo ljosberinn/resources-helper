@@ -1,5 +1,5 @@
-import { OK, BAD_REQUEST, SERVICE_UNAVAILABLE } from '../utils/statusCodes';
 import { APIService } from '../services';
+import { OK, BAD_REQUEST, SERVICE_UNAVAILABLE } from '../utils/statusCodes';
 import { validate } from '../utils/validators';
 
 export async function handler(

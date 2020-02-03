@@ -1,6 +1,7 @@
+import classnames from 'classnames';
 import React from 'react';
 import { toast as toastFn } from 'react-toastify';
-import classnames from 'classnames';
+
 import { ToastCloseButton } from '../components';
 
 toastFn.configure({

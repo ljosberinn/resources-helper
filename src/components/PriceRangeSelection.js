@@ -1,11 +1,13 @@
-import React from 'react';
-import { Tab, Help } from 'rbx';
-import { useRates } from '../hooks';
-import { useTranslation } from 'react-i18next';
 import {
   faDollarSign,
   faHourglassHalf,
 } from '@fortawesome/free-solid-svg-icons';
+import { Tab, Help } from 'rbx';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { useRates } from '../hooks';
+
 import Icon from './Icon';
 import styles from './PriceRangeSelection.module.scss';
 

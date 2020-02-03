@@ -1,11 +1,12 @@
 import fetch from 'node-fetch';
+import mysql from 'promise-mysql';
+
 import {
   CREATED,
   INTERNAL_SERVER_ERROR,
   REQUEST_TIMEOUT,
   UNAUTHORIZED,
 } from '../utils/statusCodes';
-import mysql from 'promise-mysql';
 
 const URL = 'https://www.resources-game.ch/exchange/kurseliste_json.txt';
 

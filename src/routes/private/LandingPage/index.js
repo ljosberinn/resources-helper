@@ -1,8 +1,9 @@
+import { Section, Column, Title, Box } from 'rbx';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Section, Column, Title, Box } from 'rbx';
-import { useUser } from '../../../hooks';
+
 import { PriceRangeSelection, TemplatedHelmet } from '../../../components';
+import { useUser } from '../../../hooks';
 
 export default function LandingPage() {
   const { t } = useTranslation('routes');

@@ -1,6 +1,7 @@
-import { OK, BAD_REQUEST, INTERNAL_SERVER_ERROR } from '../utils/statusCodes';
 import mysql from 'promise-mysql';
+
 import PRICE_AGE_RANGES from '../constants/priceRanges';
+import { OK, BAD_REQUEST, INTERNAL_SERVER_ERROR } from '../utils/statusCodes';
 
 export async function handler({ queryStringParameters: { range } }) {
   if (!range || !PRICE_AGE_RANGES.includes(parseInt(range))) {

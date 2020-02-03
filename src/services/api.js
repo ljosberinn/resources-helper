@@ -1,5 +1,5 @@
-import fetch from 'node-fetch';
 import AbortController from 'abort-controller';
+import fetch from 'node-fetch';
 
 const ENDPOINT = 'https://resources-game.ch/resapi/';
 

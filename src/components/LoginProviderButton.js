@@ -1,12 +1,14 @@
-import React from 'react';
-import { Button } from 'rbx';
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { useIdentityContext } from 'react-netlify-identity';
+import { Button } from 'rbx';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { upperCaseFirstCharacter } from '../utils';
+import { useIdentityContext } from 'react-netlify-identity';
+
 import { useTheme } from '../hooks';
-import { button } from './LoginProviderButton.module.scss';
+import { upperCaseFirstCharacter } from '../utils';
+
 import Icon from './Icon';
+import { button } from './LoginProviderButton.module.scss';
 
 /**
  * @param {{

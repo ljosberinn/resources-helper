@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+
 import { RateContext } from '../context/RateContext';
 
 /**

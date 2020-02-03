@@ -1,9 +1,9 @@
 import useDetectColorScheme from './useDetectColorScheme';
-import useTheme from './useTheme';
-import useUser from './useUser';
+import useNavigate from './useNavigate';
 import useRates from './useRates';
 import useScrollToTop from './useScrollToTop';
-import useNavigate from './useNavigate';
+import useTheme from './useTheme';
+import useUser from './useUser';
 
 export {
   useDetectColorScheme,

@@ -1,9 +1,11 @@
+import { Media, Image, Help, Content, Title } from 'rbx';
 import React from 'react';
 import { useIdentityContext } from 'react-netlify-identity';
-import { Media, Image, Help, Content, Title } from 'rbx';
+
 import { AvatarSvg } from '../../../../components/themedSvgs';
-import AccountMetadata from './AccountMetadata';
+
 import styles from './AccountInformation.module.scss';
+import AccountMetadata from './AccountMetadata';
 
 export default function AccountInformation() {
   const {

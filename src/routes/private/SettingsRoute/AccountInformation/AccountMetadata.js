@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Field, Tab, Table, Generic } from 'rbx';
 import { faUser, faFileCode } from '@fortawesome/free-solid-svg-icons';
+import { Field, Tab, Table, Generic } from 'rbx';
+import React, { useState } from 'react';
+
 import { Icon } from '../../../../components';
 
 /**

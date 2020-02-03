@@ -1,12 +1,13 @@
-import React, { Suspense } from 'react';
-import { Section, Title, Column, Box, Tab } from 'rbx';
-import { useTranslation } from 'react-i18next';
-import { Route, Link, Switch, useLocation } from 'react-router-dom';
 import {
   faSlidersH,
   faUserCog,
   faUserShield,
 } from '@fortawesome/free-solid-svg-icons';
+import { Section, Title, Column, Box, Tab } from 'rbx';
+import React, { Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Route, Link, Switch, useLocation } from 'react-router-dom';
+
 import { TemplatedHelmet, Icon } from '../../../components';
 import LoadableComponent from '../../loadUtils';
 

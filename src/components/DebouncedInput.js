@@ -1,5 +1,5 @@
-import React from 'react';
 import { Input } from 'rbx';
+import React from 'react';
 import DebounceInput from 'react-debounce-input';
 
 export default function DebouncedInput({
